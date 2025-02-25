@@ -69,7 +69,7 @@
             <h3>Sample Code 1: Project 2 - Driving the Turtle</h3>
             <p>This code creates and moves a turtle.</p>
             <pre class="code">
-# Trinket linke here: https://trinket.io/python/37d6744782db
+# Trinket link here: https://trinket.io/python/37d6744782db
 
 import turtle
 
@@ -110,7 +110,8 @@ my_tortoise.up()                # lift up the tail/pen
             <h3>Sample Code 2: Project 3 - How Many Handshakes</h3>
             <p>This code demonstrates a simple mathematical calculation involving an input value.</p>
             <pre class="code">
-# Project 3 - How many Handshakes
+# Trinket link here: https://trinket.io/python/25d592cc1c71
+                
 # My experience working on this project was definitely a bit more stressful. I'm ready to learn more and how to proceed. 
 # It was a step up from simply playing around like with the turtle. However, I gave it a shot and a good amount of time.
 # Successes: After a rough first attempt (I literally did the math in my head and just made it print the answer), I restarted and the code seemed viable since I had shown my work.
@@ -121,7 +122,37 @@ my_tortoise.up()                # lift up the tail/pen
 x = input("Please enter number of people: ")               # enter number of people in the group to be x 
 x = int(x)                                                 # convert string type input to an integer
 num_handshakes = ((x - 1) / 2) * x                         # equation for calculating total handshakes of group
-print num_handshakes, "handshakes"                         # final answer with proper label
+print num_handshakes, "handshakes"                          # final answer with proper label
+            </pre>
+        </div>
+
+        <div class="code-section">
+            <h3>Sample Code 3: Project 4 - Turtle Circle</h3>
+            <p>This code creates a turtle and draws a circle without using the circle function.</p>
+            <pre class="code">
+# Trinket link here: https://trinket.io/python/2df992b5d9c6
+                
+# Working on this project was an interesting experience -- not all bad! I was one of the people who initially didn't use an input function. 
+# My second go on the code took longer than expected because I wasn't sure how to implement the radius input into the side length calculation.
+# Successes - When I finally got the circle-esque shape I wanted it was SO satfifying. My success was realizing how to use s_length within the loop.  
+# Challenges - Incremental development of code stretched my brain! I kept having to go back and debug and rewrite. But it was a good level of challenge.
+# Suggestions - Maybe remind us to use the input function or subtly review the imput function before this project so that we don't omit it the first try? 
+
+
+import turtle                                         # allows us to use the turtles library
+wn = turtle.Screen()                                  # create a graphics window
+wn.bgcolor("lightgreen")                              # set the window background color
+tess=turtle.Turtle()                                  # create a turtle named Tess
+sum_int_angs = (20 - 2) * 180                         # determine the sum of the interior angles in a circle with 20 sides
+int_ang = sum_int_angs / 20                           # determine the measure of a single interior angle
+t_ang = 180 - int_ang                                 # determine the coreepsonding turn angle 
+r = input("Please enter number for radius length:")   # ask the user to provide a radius length to use in formula
+r = int(r)                                            # converts the user's input into an integer for calculation
+s_length = (2 * 3.1415 * r)/20                        # formula to calculate the length of a side in the circle
+for i in range(20):                                   # create a loop that repeats 20 times
+    tess.forward(s_length)                            # moves turtle forward by calculated side length in units
+    tess.left(18)                                     # moves turtle 18 units to the left
+wn.exitonclick                                        # wait for a user click on the canvas
             </pre>
         </div>
 
@@ -156,6 +187,103 @@ plt.grid(True)
 plt.show()
             </pre>
         </div>
+
+        <div class="code-section">
+            <h3>Sample Code 3: Data Analysis</h3>
+            <p>This code showcases data analysis techniques such as fitting data or performing statistical analysis.</p>
+            <pre class="code">
+# Linear regression example
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Sample data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 3, 5, 7, 11])
+
+# Perform linear regression
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+
+# Predicted values
+y_pred = slope * x + intercept
+
+# Plot the data and the regression line
+plt.scatter(x, y, color='blue', label='Data points')
+plt.plot(x, y_pred, color='red', label='Fitted line')
+plt.title('Linear Regression')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
+plt.grid(True)
+plt.show()
+            </pre>
+        </div>
+
+        <div class="code-section">
+            <h3>Sample Code 3: Data Analysis</h3>
+            <p>This code showcases data analysis techniques such as fitting data or performing statistical analysis.</p>
+            <pre class="code">
+# Linear regression example
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Sample data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 3, 5, 7, 11])
+
+# Perform linear regression
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+
+# Predicted values
+y_pred = slope * x + intercept
+
+# Plot the data and the regression line
+plt.scatter(x, y, color='blue', label='Data points')
+plt.plot(x, y_pred, color='red', label='Fitted line')
+plt.title('Linear Regression')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
+plt.grid(True)
+plt.show()
+            </pre>
+        </div>
+
+        <div class="code-section">
+            <h3>Sample Code 3: Data Analysis</h3>
+            <p>This code showcases data analysis techniques such as fitting data or performing statistical analysis.</p>
+            <pre class="code">
+# Linear regression example
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Sample data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 3, 5, 7, 11])
+
+# Perform linear regression
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+
+# Predicted values
+y_pred = slope * x + intercept
+
+# Plot the data and the regression line
+plt.scatter(x, y, color='blue', label='Data points')
+plt.plot(x, y_pred, color='red', label='Fitted line')
+plt.title('Linear Regression')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
+plt.grid(True)
+plt.show()
+            </pre>
+        </div>
+        
     </section>
 
     <footer>

@@ -66,83 +66,62 @@
         <h2>2. Code Samples</h2>
         
         <div class="code-section">
-            <h3>Sample Code 1: Physics Simulation</h3>
-            <p>This code simulates a simple physics model, such as projectile motion or harmonic oscillation.</p>
+            <h3>Sample Code 1: Project 2 - Driving the Turtle</h3>
+            <p>This code creates and moves a turtle.</p>
             <pre class="code">
-# Simple projectile motion simulation
+# Simple turtle movement 
 
-import numpy as np
-import matplotlib.pyplot as plt
+import turtle
 
-# Constants
-g = 9.81  # acceleration due to gravity (m/s^2)
-v0 = 20   # initial velocity (m/s)
-angle = 45  # launch angle (degrees)
+my_tortoise = turtle.Turtle()   # Create a turtle
+my_tortoise.color('blue')       # set the color to blue
+my_tortoise.backward(50)        # draw a blue line of length 50 
+my_tortoise.right(90)           # change direction to the right
+my_tortoise.forward(25)         # draw a blue line of length 25               
+my_tortoise.left(90)            # change direction to the left
+my_tortoise.forward(50)         # draw a blue line of length 50
+my_tortoise.right(90)           # change direction to the right
+my_tortoise.forward(25)         # draw a blue line of length 25
+my_tortoise.right(90)           # change direction to the right
+my_tortoise.forward(50)         # draw a blue line of length 50
+my_tortoise.right(180)          # change to opposite direction
+my_tortoise.up()                # lift up the tail/pen
+my_tortoise.forward(100)        # move forward 100 without drawing
 
-# Convert angle to radians
-theta = np.radians(angle)
-
-# Time of flight
-t_flight = 2 * v0 * np.sin(theta) / g
-
-# Time points
-t = np.linspace(0, t_flight, 100)
-
-# Equations of motion
-x = v0 * np.cos(theta) * t
-y = v0 * np.sin(theta) * t - 0.5 * g * t**2
-
-# Plot the trajectory
-plt.figure(figsize=(8, 5))
-plt.plot(x, y)
-plt.title('Projectile Motion')
-plt.xlabel('Distance (m)')
-plt.ylabel('Height (m)')
-plt.grid(True)
-plt.show()
-            </pre>
+my_tortoise.down()              # put the tail/pen down
+my_tortoise.left(90)            # change direction to the left
+my_tortoise.color('red')        # change the color to red
+my_tortoise.forward(25)         # draw a red line 
+my_tortoise.left(180)           # change to opposite direction
+my_tortoise.forward(25)         # go over red line again
+my_tortoise.left(90)            # change direction to the left
+my_tortoise.forward(50)         # draw a red line of length 50
+my_tortoise.left(90)            # change direction to the left
+my_tortoise.forward(50)         # draw a red line of length 50
+my_tortoise.left(90)            # change direction to the left
+my_tortoise.forward(35)         # draw a red line of length 35
+my_tortoise.right(180)          # change to opposite direction
+my_tortoise.forward(70)         # go over red line again and draw another 35 segment
+my_tortoise.up()                # lift up the tail/pen
+                    </pre>
         </div>
 
         <div class="code-section">
-            <h3>Sample Code 2: Mathematical Modeling</h3>
-            <p>This code demonstrates a simple mathematical model, such as solving differential equations or optimization problems.</p>
+            <h3>Sample Code 2: Project 3 - How Many Handshakes</h3>
+            <p>This code demonstrates a simple mathematical calculation involving an input value.</p>
             <pre class="code">
-# Simple Differential Equation Solver (Euler's Method)
+# Project 3 - How many Handshakes
+# My experience working on this project was definitely a bit more stressful. I'm ready to learn more and how to proceed. 
+# It was a step up from simply playing around like with the turtle. However, I gave it a shot and a good amount of time.
+# Successes: After a rough first attempt (I literally did the math in my head and just made it print the answer), I restarted and the code seemed viable since I had shown my work.
+# Challenges: I couldn't attend class yesterday, so I felt really lost. With a little guidance from Dr. Hubbard-James, I'm hoping this is closer to being correct!
+# Suggestions: I'm not sure who the suggestions are for haha! 
 
-import numpy as np
-import matplotlib.pyplot as plt
 
-# Parameters
-dt = 0.01  # time step
-t_max = 10  # maximum time
-N = int(t_max / dt)  # number of steps
-
-# Function to define the differential equation: dy/dt = -y
-def dydt(y, t):
-    return -y
-
-# Initial condition
-y0 = 1.0  # initial value
-
-# Time array
-t = np.linspace(0, t_max, N)
-
-# Array to store the solution
-y = np.zeros(N)
-y[0] = y0
-
-# Euler's method to solve the differential equation
-for i in range(1, N):
-    y[i] = y[i-1] + dydt(y[i-1], t[i-1]) * dt
-
-# Plot the result
-plt.plot(t, y, label="y(t) = e^(-t)")
-plt.xlabel('Time')
-plt.ylabel('y(t)')
-plt.title('Solving dy/dt = -y using Euler\'s Method')
-plt.grid(True)
-plt.legend()
-plt.show()
+x = input("Please enter number of people: ")               # enter number of people in the group to be x 
+x = int(x)                                                 # convert string type input to an integer
+num_handshakes = ((x - 1) / 2) * x                         # equation for calculating total handshakes of group
+print num_handshakes, "handshakes"                         # final answer with proper label
             </pre>
         </div>
 

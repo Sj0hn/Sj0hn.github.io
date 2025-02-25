@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAT/PHY 131 Course Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        section {
+            padding: 2rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .code-section {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        .code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MAT/PHY 131 Course Work Showcase</h1>
+        <p>Explore the coding work I've done in my MAT/PHY 131 course</p>
+    </header>
+
+    <section>
+        <h2>1. Introduction to the Course</h2>
+        <p>This page highlights the projects, assignments, and coding I've done throughout the MAT/PHY 131 course.</p>
+    </section>
+
+    <section>
+        <h2>2. Code Samples</h2>
+        
+        <div class="code-section">
+            <h3>Sample Code 1: Physics Simulation</h3>
+            <p>This code simulates a simple physics model, such as projectile motion or harmonic oscillation.</p>
+            <pre class="code">
+# Simple projectile motion simulation
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+g = 9.81  # acceleration due to gravity (m/s^2)
+v0 = 20   # initial velocity (m/s)
+angle = 45  # launch angle (degrees)
+
+# Convert angle to radians
+theta = np.radians(angle)
+
+# Time of flight
+t_flight = 2 * v0 * np.sin(theta) / g
+
+# Time points
+t = np.linspace(0, t_flight, 100)
+
+# Equations of motion
+x = v0 * np.cos(theta) * t
+y = v0 * np.sin(theta) * t - 0.5 * g * t**2
+
+# Plot the trajectory
+plt.figure(figsize=(8, 5))
+plt.plot(x, y)
+plt.title('Projectile Motion')
+plt.xlabel('Distance (m)')
+plt.ylabel('Height (m)')
+plt.grid(True)
+plt.show()
+            </pre>
+        </div>
+
+        <div class="code-section">
+            <h3>Sample Code 2: Mathematical Modeling</h3>
+            <p>This code demonstrates a simple mathematical model, such as solving differential equations or optimization problems.</p>
+            <pre class="code">
+# Simple Differential Equation Solver (Euler's Method)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+dt = 0.01  # time step
+t_max = 10  # maximum time
+N = int(t_max / dt)  # number of steps
+
+# Function to define the differential equation: dy/dt = -y
+def dydt(y, t):
+    return -y
+
+# Initial condition
+y0 = 1.0  # initial value
+
+# Time array
+t = np.linspace(0, t_max, N)
+
+# Array to store the solution
+y = np.zeros(N)
+y[0] = y0
+
+# Euler's method to solve the differential equation
+for i in range(1, N):
+    y[i] = y[i-1] + dydt(y[i-1], t[i-1]) * dt
+
+# Plot the result
+plt.plot(t, y, label="y(t) = e^(-t)")
+plt.xlabel('Time')
+plt.ylabel('y(t)')
+plt.title('Solving dy/dt = -y using Euler\'s Method')
+plt.grid(True)
+plt.legend()
+plt.show()
+            </pre>
+        </div>
+
+        <div class="code-section">
+            <h3>Sample Code 3: Data Analysis</h3>
+            <p>This code showcases data analysis techniques such as fitting data or performing statistical analysis.</p>
+            <pre class="code">
+# Linear regression example
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Sample data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 3, 5, 7, 11])
+
+# Perform linear regression
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+
+# Predicted values
+y_pred = slope * x + intercept
+
+# Plot the data and the regression line
+plt.scatter(x, y, color='blue', label='Data points')
+plt.plot(x, y_pred, color='red', label='Fitted line')
+plt.title('Linear Regression')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
+plt.grid(True)
+plt.show()
+            </pre>
+        </div>
+    </section>
+
+    <footer>
+        <p>Created by [Your Name] | MAT/PHY 131 Course Showcase</p>
+    </footer>
+
+</body>
+</html>
